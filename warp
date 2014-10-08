@@ -41,9 +41,11 @@ warp() {
   if [ "${_uname:0:6}" == "Darwin" ]; then
     sed -i "" "s/#.*$//g" ~/.picked
     sed -i "" "s/\-\-.*$//g" ~/.picked
+    sed -i "" "s/ \-p/:/g" ~/.picked
   elif [ "${_uname:0:5}" == "Linux" ]; then
     sed -i "s/#.*$//g" ~/.picked
     sed -i "s/\-\-.*$//g" ~/.picked
+    sed -i "s/:/ -p/g" ~/.picked
   fi
   local COMMAND="$(awk -v cmd=$SSH 'BEGIN {printf cmd} {printf " " $0} END { print "" }' "$TARGET")"
 
