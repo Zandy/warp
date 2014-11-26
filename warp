@@ -43,6 +43,7 @@ warp() {
     #COMMAND="$(awk -v cmd=$SSH '{ n = split($1, parts, ":"); if (n == 2) { print cmd, "-p", parts[2], parts[1] } else { print cmd, $1 } }' "$TARGET")"
     COMMAND=$(sed "s/#.*$//g" "$TARGET"|sed "s/\-\-.*$//g"|sed "s/:/ -p/g"|awk -v cmd=$SSH 'BEGIN{print cmd}{print " "$0}')
   fi
+  COMMAND=$(echo $COMMAND)
 
   # add the command to the bash history as if we had typed it, will only work if sourced
   # Determine which history command to use based on shell
