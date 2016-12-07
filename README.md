@@ -75,6 +75,9 @@ is useful if you want to SSH to multiple hosts that are not on lines following
 each other: just slice and dice the file, put the lines together, add or modify
 something, select them and press enter.
 
+An alternative file to choose hostnames from can be specified by passing the location
+of the file as the first argument to the script.
+
 What about ports or other host-specific config?
 -----------------------------------------------
 
@@ -112,4 +115,13 @@ shell, type `warp`, press enter. A function was added to your shell.
 
 `warp` will modify the history to contain the SSH command (as if you typed it)
 rather than `warp`.
+
+Contributors
+------------
+
+Thanks to the following people for helping me out:
+
+* Daniel T ([@r0b0tbuilder](https://github.com/r0b0tbuilder))
+* Daniel Morrison ([@dmorrison42](https://github.com/dmorrison42))
+* David Chapman ([@dchapman1988](https://github.com/dchapman1988))
 
