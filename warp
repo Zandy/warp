@@ -26,6 +26,12 @@ warp() {
     return
   fi
 
+  cat $TARGET | grep '^autossh '
+  if [ $? -eq 0 ]; then
+	  eval $(cat $TARGET)
+	  exit 0
+  fi
+
   # transform seletion in ssh command
   local SSH=${SSH:-ssh}
   local COMMAND=""
